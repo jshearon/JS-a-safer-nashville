@@ -1,8 +1,10 @@
 body {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   font-family: 'Barlow Condensed', sans-serif;
+  padding: 30px;
+  margin: 0;
 }
 
 img {
@@ -11,87 +13,42 @@ img {
   z-index: -100;
 }
 
-h1 {
-  text-align: left;
+.navigation h1 {
+  text-align: center;
+  font-size: 50px;
+  width: 260px;
+  background-color: #323B51;
+  margin:0 0 0 50px 0;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
 }
 
 a {
   text-decoration: none;
 }
 
-nav {
-    font-family: monospace;
-}
-
-ul {
-  z-index: 1;
-  background: darkorange;
-    list-style: none;
-    margin: 0;
-    padding-left: 0;
-}
-
-li {
-    color: #fff;
-  background: darkorange;
-    display: block;
-    float: left;
-    padding: 1rem;
-    position: relative;
-    text-decoration: none;
-  transition-duration: 0.5s;
-}
-  
-li a {
-  color: #fff;
-}
-
-li:hover {
-    background: red;
-    cursor: pointer;
-}
-
-ul li ul {
-    background: orange;
-    visibility: hidden;
-  opacity: 0;
-  min-width: 5rem;
-    position: absolute;
-  transition: all 0.5s ease;
-  margin-top: 1em;
-    left: 0;
-  display: none;
-}
-
-ul li:hover > ul,
-ul li ul:hover {
-  visibility: visible;
-  opacity: 1;
-  display: block;
-}
-
-ul li ul li {
-    clear: both;
-  width: 100%;
-}
-
 #content {
-  width:800px;
+  width:735px;
   height: 800px;
   margin: auto;
   position: relative;
 }
 
 #businessName {
-  font-family: 'Oleo Script Swash Caps', cursive;
+  font-family: 'Abril Fatface', cursive;
   position: absolute;
-  top: 50px;
-  left: 50%;
-  transform: translateX(-55%);
+  top: 85px;
+  left: 0;
+  right: 0;
+  bottom: 0;
   z-index: 50;
+  /* font-size: 60px; */
+  width: 600px;
+  color: #528DCD;
+  text-align: center;
+  margin: auto;
   font-size: 40px;
-  width: 450px;
-  color: #999
 }
 
 #openStatus {
@@ -107,12 +64,81 @@ ul li ul li {
 }
 
 #notes {
+  background-color: transparent;
   position: absolute;
-  top: 400px;
-  left: 125px;
+  top: 375px;
+  left: 80px;
   z-index: 60;
   font-size: 20px;
-  width: 200px;
+  width: 340px;
+  height: 245px;
   color: white;
   opacity: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: 0;
+  padding: 0 0 0 10px;
+}
+
+#notes li {
+  background-color: transparent;
+  padding: 0 5px 0 10px;
+  list-style: none;
+  margin: 0;
+}
+
+.navigation {
+  width: 300px;
+  margin: 0;
+}
+
+#mainmenu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.submenu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: #385877;
+}
+
+#mainmenu a {
+  display: block;
+  background-color: #6CA5DB;
+  text-decoration: none;
+  padding: 10px;
+  color: white;
+  border-bottom: 1px solid white;
+}
+
+#mainmenu a:hover {
+    background-color: #528DCD;
+}
+
+#mainmenu li:hover .submenu {
+  display: block;
+  max-height: 200px;
+}
+
+.submenu a {
+  display: block;
+  padding: 10px 10px 10px 40px !important;
+  margin: 0;
+  background-color: #EC5F79 !important;
+}
+
+.submenu a:hover {
+  background-color: #F18EA5 !important;
+}
+
+.submenu {
+  overflow: hidden;
+  max-height: 0;
+  transition: all 0.5s ease-out;
 }

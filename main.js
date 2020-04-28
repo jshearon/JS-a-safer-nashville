@@ -8,29 +8,33 @@ const printToDom = (string, id) => {
 const createMenu = (array) => {
   domString ='';
   for (i=0; i < array.length; i++) {
-    domString += `<li>
-                  <a href="">${array[i].type}</a>
-                  <ul>
-                    <li><a href="#" data-business-type="${array[i].type}" data-phase="Now" class="targetMenu">Now</a></li>
-                    <li><a href="#" data-business-type="${array[i].type}" data-phase="One" class="targetMenu">Phase One</a></li>
-                    <li><a href="#" data-business-type="${array[i].type}" data-phase="Two" class="targetMenu">Phase Two</a></li>
-                    <li><a href="#" data-business-type="${array[i].type}" data-phase="Three" class="targetMenu">Phase Three</a></li>
-                    <li><a href="#" data-business-type="${array[i].type}" data-phase="Four" class="targetMenu">Phase Four</a></li>
-                  </ul>
+    domString += `<li><a href="">${array[i].type}</a>
+                    <ul class="submenu">
+                      <li><a href="#" data-business-type="${array[i].type}" data-phase="Now" class="targetMenu">Now</a></li>
+                      <li><a href="#" data-business-type="${array[i].type}" data-phase="One" class="targetMenu">Phase One</a></li>
+                      <li><a href="#" data-business-type="${array[i].type}" data-phase="Two" class="targetMenu">Phase Two</a></li>
+                      <li><a href="#" data-business-type="${array[i].type}" data-phase="Three" class="targetMenu">Phase Three</a></li>
+                      <li><a href="#" data-business-type="${array[i].type}" data-phase="Four" class="targetMenu">Phase Four</a></li>
+                    </ul>
                   </li>`
   }
-  printToDom(domString, "main_nav");
+  printToDom(domString, "mainmenu");
 }
 
 //create divs to be printed and activated
-const createDivs = (type, phase) => {
+const createDivs = (event) => {
+  console.log(event);
   let domString = '';
-  const bizObject = businesses.find(business => business.type === type);
-  const phaseStatus = "phase" + phase + "Status";
-  const phaseNotes = "phase" + phase + "Notes";
-  domString += `<h1 id="businessName">${bizObject.type}</h1>`;
-  domString += `<h3 id="openStatus">${bizObject[phaseStatus]}</h3>`;
-  domString += `<p id="notes">${bizObject[phaseNotes]}</p>`;
+  const bizObject = businesses.find(business => business.type === event.target.dataset.businessType);
+  const phaseStatus = "phase" + event.target.dataset.phase + "Status";
+  const phaseNotes = "phase" + event.target.dataset.phase + "Notes";
+  domString += `<h1 id="businessName">${bizObject.type}</h1>
+                <h3 id="openStatus">${bizObject[phaseStatus]}</h3>
+                <ul id="notes">`;
+  for (let i=0; i < bizObject[phaseNotes].length; i++) {
+    domString += `<li>${bizObject[phaseNotes][i]}</li>`;
+  }        
+  domString += `<ul>`;
   printToDom(domString, "container");
 }
 
@@ -38,9 +42,7 @@ const createDivs = (type, phase) => {
 const createListener = () => {
   const elements = document.getElementsByClassName("targetMenu");
   for (var i = 0; i < elements.length; i++) {
-    elements[i].addEventListener('click', function() {
-      createDivs(this.dataset.businessType, this.dataset.phase);
-    }, false);
+    elements[i].addEventListener('click', createDivs);
   }
 }
 
