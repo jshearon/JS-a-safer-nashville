@@ -77,13 +77,19 @@ const businesses = [
       'Clean all surfaces after every use',
       'Employees screened daily',
       'Employees wearing masks is optional, but recommended'
-    ],
+    ]
+  },
+  {
     type: 'Bars & Entertainment Venues',
     phaseNowStatus: 'closed',
     phaseOneStatus: 'closed',
     phaseTwoStatus: 'closed',
     phaseThreeStatus: 'partial',
     phaseFourStatus: 'open',
+    phaseOneNotes: [
+    ],
+    phaseTwoNotes: [
+    ],
     phaseThreeNotes: [
       'Open at 1/2 Capacity',
       'Includes tours, museums, theaters, etc.',
@@ -95,6 +101,34 @@ const businesses = [
       'Clean all surfaces after every use',
       'Employees screened daily',
       'Employees wearing masks is optional, but recommended'
+    ]
+  },
+  {
+    type: 'Retail Stores & Commercial Businesses',
+    phaseNowStatus: 'closed',
+    phaseOneStatus: 'partial',
+    phaseTwoStatus: 'partial',
+    phaseThreeStatus: 'open',
+    phaseFourStatus: 'open',
+    phaseNowNotes: [
+
+    ],
+    phaseOneNotes: [
+      'Open at 1/2 capacity',
+      'Employees screened daily and wear face masks'
+    ],
+    phaseTwoNotes: [
+      'Open at 3/4 capacity',
+      'Employees screened daily and wear face masks'
+    ],
+    phaseThreeNotes: [
+      'Open at full Capacity',
+      'Employees screened daily and wear face masks'
+    ],
+    phaseFourNotes: [
+      'Open at full capacity',
+      'Employees screened daily',
+      'Employees wearing masks is optional but recommended'
     ]
   }
 ];
