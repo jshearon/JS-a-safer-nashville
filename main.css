@@ -1,0 +1,118 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'Barlow Condensed', sans-serif;
+}
+
+img {
+  width: 800px;
+  height: 800px;
+  z-index: -100;
+}
+
+h1 {
+  text-align: left;
+}
+
+a {
+  text-decoration: none;
+}
+
+nav {
+    font-family: monospace;
+}
+
+ul {
+  z-index: 1;
+  background: darkorange;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+}
+
+li {
+    color: #fff;
+  background: darkorange;
+    display: block;
+    float: left;
+    padding: 1rem;
+    position: relative;
+    text-decoration: none;
+  transition-duration: 0.5s;
+}
+  
+li a {
+  color: #fff;
+}
+
+li:hover {
+    background: red;
+    cursor: pointer;
+}
+
+ul li ul {
+    background: orange;
+    visibility: hidden;
+  opacity: 0;
+  min-width: 5rem;
+    position: absolute;
+  transition: all 0.5s ease;
+  margin-top: 1em;
+    left: 0;
+  display: none;
+}
+
+ul li:hover > ul,
+ul li ul:hover {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+}
+
+ul li ul li {
+    clear: both;
+  width: 100%;
+}
+
+#content {
+  width:800px;
+  height: 800px;
+  margin: auto;
+  position: relative;
+}
+
+#businessName {
+  font-family: 'Oleo Script Swash Caps', cursive;
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-55%);
+  z-index: 50;
+  font-size: 40px;
+  width: 450px;
+  color: #999
+}
+
+#openStatus {
+  font-family: 'Oleo Script Swash Caps', cursive;
+  position: absolute;
+  top: 480px;
+  left: 540px;
+  z-index: 60;
+  font-size: 20px;
+  width: 100px;
+  color: red;
+  text-align: center;
+}
+
+#notes {
+  position: absolute;
+  top: 400px;
+  left: 125px;
+  z-index: 60;
+  font-size: 20px;
+  width: 200px;
+  color: white;
+  opacity: 75%;
+}
