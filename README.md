@@ -1,6 +1,6 @@
 # A Safer Nashville
 
-![Screen Shot](a-safer-nashville-ss.png)
+![Screen Shot](a-safer-nashville-ss.gif)
 
 ## Description
 A simple app to display the different phases of Nashville's COVID re-opening plan by business category. 
